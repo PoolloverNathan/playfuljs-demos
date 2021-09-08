@@ -68,7 +68,7 @@
         var dy = Math.sin(this.direction) * distance;
         if (map.get(this.x + dx, this.y) <= 0) this.x += dx;
         if (map.get(this.x, this.y + dy) <= 0) this.y += dy;
-        this.paces += distance;
+        this.paces += Math.abs(distance);
       };
 
       Player.prototype.strafe = function(distance, map) {
@@ -76,7 +76,7 @@
         var dy = Math.sin(this.direction + 90) * distance;
         if (map.get(this.x + dx, this.y) <= 0) this.x += dx;
         if (map.get(this.x, this.y + dy) <= 0) this.y += dy;
-        this.paces += distance;
+        this.paces += Math.abs(distance);
       };
 
       Player.prototype.update = function(controls, map, seconds) {
